@@ -75,6 +75,11 @@ export class AppComponent implements OnInit {
     }
     // отмена редактирования
     cancel() {
+        console.log(this.isNewRecord);
+        if (this.isNewRecord) {
+            this.users.pop();
+            this.isNewRecord = false;
+        }
         this.editedUser = null;
     }
     // удаление пользователя
